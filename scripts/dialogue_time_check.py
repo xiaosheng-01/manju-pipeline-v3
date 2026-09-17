@@ -51,8 +51,8 @@ def count_chars(text: str) -> int:
 
 
 def r1(x: float) -> str:
-    """保留两位小数并去尾零，便于阅读。"""
-    return f"{x:.2f}".rstrip("0").rstrip(".")
+    """只精确到0.1秒（四舍五入），禁止0.01秒级精度。"""
+    return f"{x:.1f}"
 
 
 def check(shot: float, lines: list, pauses: list, no_opening: bool,
