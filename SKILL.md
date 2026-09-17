@@ -48,7 +48,16 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 3.0：把小�
    - 需要情绪/动作/特效/运镜/音效零件：`ch14-material-library.md`；需要完整范例对照：`ch15-cases.md`。
    - 长篇/多集连载项目（一章一集、资产复用）：`ch17-asset-management.md` + 项目资产库文件（asset-registry.md）。
 6. **加载记录可审计**：内部维护"阶段 → 已读文件"清单；用户问"你加载了哪些文件/是否按索引执行"时，如实报告。该记录仅供核对，不进入最终交付物。
-7. **远程加载同样适用**：若本 Skill 来自远程仓库（见仓库 README），先把仓库克隆/下载到本地 skills 目录再 Read；无法获取文件时，明确告知用户"规则文件缺失，无法执行"，**不得**凭记忆补全规则后继续。
+7. **远程自动获取（GitHub 公开仓库）**：本 Skill 托管于 `https://github.com/xiaosheng-01/manju-pipeline-v3`（公开）。若本地 `references/`、`scripts/` 或 `assets/` 文件缺失，**必须先执行以下命令自动下载全部文件，再继续索引**；禁止凭记忆补全规则后继续。
+   ```bash
+   SKILL_DIR="$(cd "$(dirname "$0")" 2>/dev/null || pwd)"
+   BASE="https://raw.githubusercontent.com/xiaosheng-01/manju-pipeline-v3/master"
+   for f in SKILL.md references/ch01-control.md references/ch02-diagnosis.md references/ch03-creed.md references/ch04-space-axis.md references/ch05-style.md references/ch06-blueprint.md references/ch07a-dialogue.md references/ch07b-dialogue-timing.md references/ch08-assets.md references/ch09-visual-fx.md references/ch10a-cinematography.md references/ch10b-action.md references/ch11-continuity.md references/ch12-storyboard-template.md references/ch13-qc-delivery.md references/ch14-material-library.md references/ch15-cases.md references/ch16-director-craft.md references/ch17-asset-management.md scripts/dialogue_time_check.py assets/asset-registry-template.md; do
+     [ -f "$SKILL_DIR/$f" ] || { mkdir -p "$SKILL_DIR/$(dirname "$f")"; curl -sL "$BASE/$f" -o "$SKILL_DIR/$f"; echo "已下载: $f"; }
+   done
+   chmod +x "$SKILL_DIR/scripts/dialogue_time_check.py" 2>/dev/null
+   ```
+   无法访问 GitHub 时，明确告知用户"规则文件缺失且无法自动下载，请检查网络或手动下载完整包"，**不得**凭记忆补全规则后继续。
 8. **交叉引用强制追读（P0）**：references 下所有 ch×× 文件都大量存在"具体标准按第X章X.X执行""见第X章""按第X章处理"等指针式引用。**无论当前在读哪个文件**，读到任一此类引用时，必须立即按下方「章节号→文件名速查表」Read 对应文件，并用 Grep 定位到该小节读完具体标准，然后才继续执行；禁止凭记忆复述引用章节的内容、禁止"到对应阶段再读"、禁止只写"按X章X.X执行"而不落实具体规则。拆分章节（第7章、第10章）按小节范围选文件。引用涉及多个章节时，逐一追读，不遗漏。
 9. **追读防混乱约束**：
    - **按当前步骤相关性追读**：ch02 等清单文件含大量引用，但执行到某一步时只追读该步直接引用的章节；禁止把文件中所有引用一次性全读一遍。当前步骤完成、进入下一步时，再追读下一步的引用。
