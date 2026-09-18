@@ -6,12 +6,12 @@
 规则口径（见 references/ch07a-dialogue.md 7.0/7.5、ch07b-dialogue-timing.md 7.19）：
   字数 N          ：逐字统计。默认只计汉字、字母、数字，不含标点与空白；
                     可用 --count 手动覆盖（与人工口径不一致时以用户给定字数为准）。
-  节奏缓冲（自动按字数分级，可用 --rhythm 手动覆盖）：
+  情绪缓冲（按句末标点查表，可用 --emotion 手动覆盖）：
                     5字及以下 0s｜6-10字 0.4s｜11-20字 0.75s｜21-30字 1.25s｜31字及以上 1.75s
   情绪缓冲（自动按情绪类型分级，可用 --mood 选择，或 --emotion 手动覆盖）：
                     日常平静 0s｜激动愤怒 0.5s｜恐惧犹豫 0.5s｜悲伤哭泣 0.75s｜高燃打脸 0.75s｜温柔告白 0.75s
   红线纯发声时长  ：N / 4.5 秒（4.5 字/秒，吞台词极限语速）。
-  红线总时长      ：N / 4.5 + 节奏缓冲 + 情绪缓冲。
+  红线总时长      ：N / 4.5 + 情绪缓冲（按句末标点查表）。
   目标纯发声时长  ：N / 3.5 秒（3.5 字/秒舒适语速）。
   目标总时长      ：N / 3.5 + 节奏缓冲 + 情绪缓冲。
   核心可用时间    ：镜头总时长 - 1.0（首帧 0.5s + 尾帧 0.5s）；
@@ -22,7 +22,7 @@
                     → 拆当前镜 → 最后才跨镜头（跨镜必须重排两镜）。
 
 用法：
-  # 单句（自动按字数算节奏缓冲，默认日常平静情绪）
+  # 单句（情绪缓冲按句末标点查表，默认0.5）
   python3 dialogue_time_check.py --shot 12 --line "风起青萍"
 
   # 单句指定情绪类型（自动算情绪缓冲）
@@ -49,7 +49,7 @@ import sys
 
 CHAR_RE = re.compile(r"[\u4e00-\u9fffA-Za-z0-9]")
 
-# 节奏缓冲按字数分级
+# 情绪缓冲按句末标点查表，见ch07a第7.1.6.2
 def auto_rhythm(n: int) -> float:
     if n <= 5:
         return 0.0
@@ -94,7 +94,7 @@ def check(shot: float, lines: list, pauses: list, no_opening: bool,
     for i, ln in enumerate(lines):
         text = ln["text"]
         n = int(ln.get("count") or count_chars(text))
-        # 节奏缓冲：手动指定优先，否则按字数自动分级
+        # 情绪缓冲：手动指定优先，否则按句末标点查表
         rh = float(ln["rhythm"]) if ln.get("rhythm") is not None else auto_rhythm(n)
         # 情绪缓冲：手动指定优先，否则按情绪类型自动分级
         if ln.get("emotion") is not None:
@@ -136,7 +136,7 @@ def check(shot: float, lines: list, pauses: list, no_opening: bool,
         for x in results:
             print(f"[{x['idx']}] {x['speaker']} 「{x['text']}」")
             print(f"    字数 {x['n']}（不含标点）｜情绪类型：{x['mood']}")
-            print(f"    节奏缓冲 {r1(x['rh'])}s（{x['n']}字自动分级）｜情绪缓冲 {r1(x['em'])}s（{x['mood']}）")
+            print(f"    情绪缓冲 {r1(x['em'])}s（按句末标点查表）")
             print(f"    红线纯发声 {r1(x['redline_pure'])}s（字数÷{r1(redline_rate)}）"
                   f"｜红线总时长 {r1(x['redline_total'])}s（纯发声+节奏+情绪）")
             print(f"    目标纯发声 {r1(x['target_pure'])}s（字数÷{r1(target_rate)}）"
