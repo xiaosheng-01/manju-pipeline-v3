@@ -23,7 +23,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 - **制作模式**：一章 = 一集，用户逐章发送小说正文，做一集发一集，不一次处理全部章节
 - **项目初始化**：读取大纲，建资产库编号骨架（角色名/场景名占位，描述留空），提取关键伏笔清单，确认制作范围；不做完整蓝图，不创作正文未覆盖内容
 - **资产复用**：每集从正文提取资产，对比资产库，已有资产直接复用，或询问用户是否需要新增，只制作新增资产；资产描述只从正文提取，不从大纲编造！！！
-- **大纲定位**：大纲仅作为剧情走向/衔接/角色弧线方向参考，绝对禁止从大纲里面创作正文没有的内容（见 P0 铁律第17条、`ch17-asset-management.md` 17.6）
+- **大纲定位**：大纲仅作为剧情走向/衔接/角色弧线方向参考，绝对禁止从大纲里面创作正文没有的内容（见 P0 铁律第17条、`04-production/ch17-asset-management.md` 17.6）
 - **资产库模板**：`assets/asset-registry-template.md`，每个项目复制一份命名为 `asset-registry.md` 放在项目目录下
 
 ## 2. 强制索引协议（最高优先级，先于一切流程）
@@ -35,24 +35,24 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 1. **必须强制执行先加载、后动手**：每个阶段开始前，必须强制执行！用 Read 打开第 4 节阶段表中该阶段映射的**全部** reference 文件；必须强制执行！！未加载，强制禁止产出该阶段任何内容，包括"先写一版""简单示例""草稿"。
 2. **整章加载，强制禁止只读目录**：长文件必须先读开头"本章节录"定位，再 Read 与当前任务相关的完整区段；绝对禁止只读标题、只读 TOC、只读片段就声称已加载，均视为未加载。
 3. **跨会话不豁免**：即使在其他会话中用过本 Skill、即使上下文里似乎记得规则，强制执行本次任务仍必须重新 Read——绝对禁止模型记忆作为规则来源。
-4. **加载即对账**：每完成一个阶段，绝对必须内部核对"产物涉及的规则文件是否全部已读"。写了台词但没读 `ch07a/ch07b`、写了打斗但没读 `ch10b`、写了资产卡但没读 `ch08`、写了分镜但没读 `ch12`，强制判定违规并返工。
+4. **加载即对账**：每完成一个阶段，绝对必须内部核对"产物涉及的规则文件是否全部已读"。写了台词但没读 `03-dialogue/ch07a`/`03-dialogue/ch07b`、写了打斗但没读 `04-production/ch10b`、写了资产卡但没读 `04-production/ch08`、写了分镜但没读 `04-production/ch12`，强制判定违规并返工。
 5. **最小强制加载集**：
-   - 任意任务：`ch01-control.md` + 当前阶段映射文件；
-   - 含台词：`ch07a-dialogue.md` + `ch07b-dialogue-timing.md`；
-   - 含资产卡：`ch08-asset-lock.md`；
-   - 含分镜：`ch12-storyboard-template.md` + `ch10a-camera-language.md`；含打斗/法术/御剑/轻功/突破再加 `ch10b-action-engine.md`；强调画质/特效加 `ch09-visual-effects.md`；
-   - 多镜头或跨段：`ch11-continuity.md`；
-   - 规划阶段：`ch02-diagnosis.md` + `ch03-director-creed.md` + `ch06-blueprint.md`，定风格另加 `ch05-style-binding.md` + `ch16-director-craft.md`（故事生命/叙事信息/情绪注意力/类型节奏/意象/风格原型）；
-   - 空间/机位/轴线：`ch04-scene-scale.md`；
-   - 交付前：`ch13-quality-check.md`；
-   - 需要情绪/动作/特效/运镜/音效零件：`ch14-material-library.md`；需要完整范例对照：`ch15-cases.md`。
-   - 长篇/多集连载项目（一章一集、资产复用）：`ch17-asset-management.md` + 项目资产库文件（asset-registry.md）。
+   - 任意任务：`00-core/ch01-control.md` + 当前阶段映射文件；
+   - 含台词：`03-dialogue/ch07a-dialogue.md` + `03-dialogue/ch07b-dialogue-timing.md`；
+   - 含资产卡：`04-production/ch08-asset-lock.md`；
+   - 含分镜：`04-production/ch12-storyboard-template.md` + `04-production/ch10a-camera-language.md`；含打斗/法术/御剑/轻功/突破再加 `04-production/ch10b-action-engine.md`；强调画质/特效加 `04-production/ch09-visual-effects.md`；
+   - 多镜头或跨段：`04-production/ch11-continuity.md`；
+   - 规划阶段：`01-planning/ch02-diagnosis.md` + `00-core/ch03-director-creed.md` + `01-planning/ch06-blueprint.md`，定风格另加 `02-style/ch05-style-binding.md` + `02-style/ch16-director-craft.md`（故事生命/叙事信息/情绪注意力/类型节奏/意象/风格原型）；
+   - 空间/机位/轴线：`01-planning/ch04-scene-scale.md`；
+   - 交付前：`05-quality/ch13-quality-check.md`；
+   - 需要情绪/动作/特效/运镜/音效零件：`06-library/ch14-material-library.md`；需要完整范例对照：`06-library/ch15-cases.md`。
+   - 长篇/多集连载项目（一章一集、资产复用）：`04-production/ch17-asset-management.md` + 项目资产库文件（asset-registry.md）。
 6. **加载记录可审计**：内部维护"阶段 → 已读文件"清单；用户问"你加载了哪些文件/是否按索引执行"时，如实报告。该记录仅供核对，不进入最终交付物。
 7. **远程自动获取（GitHub 公开仓库）**：本 Skill 托管于 `https://github.com/xiaosheng-01/manju-pipeline-v3`（公开）。若本地 `references/`、`scripts/` 或 `assets/` 文件缺失，**必须先执行以下命令自动下载全部文件，再继续索引**；禁止凭记忆补全规则后继续。
    ```bash
    SKILL_DIR="$(cd "$(dirname "$0")" 2>/dev/null || pwd)"
    BASE="https://raw.githubusercontent.com/xiaosheng-01/manju-pipeline-v3/master"
-   for f in SKILL.md references/ch01-control.md references/ch02-diagnosis.md references/ch03-director-creed.md references/ch04-scene-scale.md references/ch05-style-binding.md references/ch06-blueprint.md references/ch07a-dialogue.md references/ch07b-dialogue-timing.md references/ch08-asset-lock.md references/ch09-visual-effects.md references/ch10a-camera-language.md references/ch10b-action-engine.md references/ch11-continuity.md references/ch12-storyboard-template.md references/ch13-quality-check.md references/ch14-material-library.md references/ch15-cases.md references/ch16-director-craft.md references/ch17-asset-management.md references/ch18-facial-expression.md scripts/dialogue_time_check.py assets/asset-registry-template.md; do
+   for f in SKILL.md references/00-core/ch01-control.md references/01-planning/ch02-diagnosis.md references/00-core/ch03-director-creed.md references/01-planning/ch04-scene-scale.md references/02-style/ch05-style-binding.md references/01-planning/ch06-blueprint.md references/03-dialogue/ch07a-dialogue.md references/03-dialogue/ch07b-dialogue-timing.md references/04-production/ch08-asset-lock.md references/04-production/ch09-visual-effects.md references/04-production/ch10a-camera-language.md references/04-production/ch10b-action-engine.md references/04-production/ch11-continuity.md references/04-production/ch12-storyboard-template.md references/05-quality/ch13-quality-check.md references/06-library/ch14-material-library.md references/06-library/ch15-cases.md references/02-style/ch16-director-craft.md references/04-production/ch17-asset-management.md references/04-production/ch18-facial-expression.md scripts/dialogue_time_check.py assets/asset-registry-template.md; do
      [ -f "$SKILL_DIR/$f" ] || { mkdir -p "$SKILL_DIR/$(dirname "$f")"; curl -sL "$BASE/$f" -o "$SKILL_DIR/$f"; echo "已下载: $f"; }
    done
    chmod +x "$SKILL_DIR/scripts/dialogue_time_check.py" 2>/dev/null
@@ -76,7 +76,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 
 ### 2.3 标准开场动作
 
-触发本 Skill 后的第一个强制执行！动作固定为：① Read `references/ch01-control.md`；② 按用户任务从第 4 节阶段表和 2.1 最小加载集确定本阶段必读文件并逐一 Read；③ 向用户简述将执行的阶段与闸门（不展开规则原文）；④ 强制执行从阶段 0 开始执行。**绝对禁止跳过①②直接产出。**
+触发本 Skill 后的第一个强制执行！动作固定为：① Read `references/00-core/ch01-control.md`；② 按用户任务从第 4 节阶段表和 2.1 最小加载集确定本阶段必读文件并逐一 Read；③ 向用户简述将执行的阶段与闸门（不展开规则原文）；④ 强制执行从阶段 0 开始执行。**绝对禁止跳过①②直接产出。**
 
 ### 2.4 章节号 → 文件名速查表（交叉引用追读用）
 
@@ -84,26 +84,26 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 
 | 原文章节 | 文件名 | 小节范围 |
 |---|---|---|
-| 第1章 元规则与总控 | `ch01-control.md` | 全部 |
-| 第2章 理解与诊断 | `ch02-diagnosis.md` | 全部 |
-| 第3章 总则与导演信条 | `ch03-director-creed.md` | 全部 |
-| 第4章 场景尺度、空间与轴线 | `ch04-scene-scale.md` | 全部 |
-| 第5章 风格绑定 | `ch05-style-binding.md` | 全部 |
-| 第6章 剧情节拍与蓝图 | `ch06-blueprint.md` | 全部 |
-| 第7章 台词工程（上） | `ch07a-dialogue.md` | 7.0–7.7 |
-| 第7章 台词工程（下） | `ch07b-dialogue-timing.md` | 7.8–7.20 |
-| 第8章 资产锁定 | `ch08-asset-lock.md` | 全部 |
-| 第9章 画面质量与特效 | `ch09-visual-effects.md` | 全部 |
-| 第10章 镜头语言（上） | `ch10a-camera-language.md` | 10.0–10.10 |
-| 第10章 动作引擎（下） | `ch10b-action-engine.md` | 10.11–10.20 |
-| 第11章 跨段连续性与信息投放 | `ch11-continuity.md` | 全部 |
-| 第12章 分镜模板与输出 | `ch12-storyboard-template.md` | 全部 |
-| 第13章 质量校验与交付 | `ch13-quality-check.md` | 全部 |
-| 第14章 素材库 | `ch14-material-library.md` | 全部 |
-| 第15章 案例集 | `ch15-cases.md` | 全部 |
-| 第16章 导演思维层 | `ch16-director-craft.md` | 全部 |
-| 第17章 资产管理与复用 | `ch17-asset-management.md` | 全部 |
-| 第18章 面部表情编码系统（FACS AU） | `ch18-facial-expression.md` | 全部 |
+| 第1章 元规则与总控 | `00-core/ch01-control.md` | 全部 |
+| 第2章 理解与诊断 | `01-planning/ch02-diagnosis.md` | 全部 |
+| 第3章 总则与导演信条 | `00-core/ch03-director-creed.md` | 全部 |
+| 第4章 场景尺度、空间与轴线 | `01-planning/ch04-scene-scale.md` | 全部 |
+| 第5章 风格绑定 | `02-style/ch05-style-binding.md` | 全部 |
+| 第6章 剧情节拍与蓝图 | `01-planning/ch06-blueprint.md` | 全部 |
+| 第7章 台词工程（上） | `03-dialogue/ch07a-dialogue.md` | 7.0–7.7 |
+| 第7章 台词工程（下） | `03-dialogue/ch07b-dialogue-timing.md` | 7.8–7.20 |
+| 第8章 资产锁定 | `04-production/ch08-asset-lock.md` | 全部 |
+| 第9章 画面质量与特效 | `04-production/ch09-visual-effects.md` | 全部 |
+| 第10章 镜头语言（上） | `04-production/ch10a-camera-language.md` | 10.0–10.10 |
+| 第10章 动作引擎（下） | `04-production/ch10b-action-engine.md` | 10.11–10.20 |
+| 第11章 跨段连续性与信息投放 | `04-production/ch11-continuity.md` | 全部 |
+| 第12章 分镜模板与输出 | `04-production/ch12-storyboard-template.md` | 全部 |
+| 第13章 质量校验与交付 | `05-quality/ch13-quality-check.md` | 全部 |
+| 第14章 素材库 | `06-library/ch14-material-library.md` | 全部 |
+| 第15章 案例集 | `06-library/ch15-cases.md` | 全部 |
+| 第16章 导演思维层 | `02-style/ch16-director-craft.md` | 全部 |
+| 第17章 资产管理与复用 | `04-production/ch17-asset-management.md` | 全部 |
+| 第18章 面部表情编码系统（FACS AU） | `04-production/ch18-facial-expression.md` | 全部 |
 
 ## 3. 最高准则 + P0铁律
 
@@ -111,7 +111,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 
 **本准则等级高于P0铁律，高于所有章节规则，高于所有补丁，没有任何规则有资格与本准则并排。所有规则、所有流程、所有产出，全部服从于本准则。**
 
-台词三条铁律（来源：`references/ch07a-dialogue.md` 7.1.4.1）：
+台词三条铁律（来源：`references/03-dialogue/ch07a-dialogue.md` 7.1.4.1）：
 
 1. 压缩台词必须保留原来的原意——原意包含三层：字面信息不变、情绪语气不变（标点不能删改）、潜台词不变。三者缺一即视为原意丢失，全部作废。
 2. 压缩后的台词必须跟时长相互匹配——字数与时长必须匹配，不匹配却继续输出通过的，全部作废。
@@ -148,7 +148,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 12. **素材库是零件库不是模板**：条目必须经不低于 30% 原创性改写，从 2-3 个条目提取零件按剧情重组；绝对禁止整条复制，禁止在交付正文中出现素材编号；红标（AI 雷区）动作必须拆分或替代。
 13. **强制执行内部评分 ≥ 90**（台词逻辑 10 / 台词时长 10 / 台词语速 10 / 分镜内容 20 / AI 可视化 20 / 语音可用性 10 / 上下衔接 10 / 分镜+台词合理性 10）；低于 90 内部必须强制退回重排，评分绝对不允许输出。
 14. **交付纯净**：最终只输出总体规划 + 资产卡 AI 提示词 + 分镜 AI 提示词，其余（理解表、蓝图、台账、预检、评分、修正记录）全部删除；用户复制任意单元即可直接使用。
-15. **量化约束**：一部片段镜头 8-18 个、总时长 81-198 秒、非人物镜头占比 30%-50%、连续人物镜头 ≤4；S 级大招全片 ≤3 次；重技法（变速/升格/希区柯克/360 环绕等）频率上限见 `references/ch10a-camera-language.md`。
+15. **量化约束**：一部片段镜头 8-18 个、总时长 81-198 秒、非人物镜头占比 30%-50%、连续人物镜头 ≤4；S 级大招全片 ≤3 次；重技法（变速/升格/希区柯克/360 环绕等）频率上限见 `references/04-production/ch10a-camera-language.md`。
 16. **优先级**：用户当前显式指令 > 显式标注覆盖的补丁 > 具体规则 > 通用规则；补丁覆盖第 3 章导演信条必须显式标注，未标注以第 3 章为准。
 17. **大纲使用边界**：大纲只是框架模型，参考思路，具体落实以正文为主。作者已有小说正文且持续更新时，大纲仅作章节走向、前后衔接、角色弧线方向的参考，是"参考思路"不是"强制契约"；大纲禁止作为任务输出必备项目，分镜内容只由该集正文决定；绝对禁止以大纲为基础创作正文里没有的剧情、台词、细节，绝对禁止从大纲编造角色外貌/服装/场景描述（只能从正文提取）；绝对禁止强制对齐大纲的伏笔回收时间点（大纲写第10集回收，作者实际可能第15-16集才回收，以正文实际位置为准）；大纲不具备完全认知，可能滞后或被作者修改；做某一集时必须以该集内容正文为唯一依据，正文与大纲不一致时以正文为准。
 18. **时长精度约束**：强制执行所有时长输出（红线时长、目标时长、台词起止、停顿、缓冲、画面时间轴）只精确到0.1秒，时间码毫秒位必须是100的整数倍；禁止0.01秒级精度，出现必须立即退回修正。
@@ -166,27 +166,176 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 30. **情绪内容画面表达强制**：每镜画面描述必须体现角色情绪（表情/肢体/微动作/环境烘托），不能只写动作不写情绪；台词的情绪类型必须与画面的情绪表达一致（愤怒台词配愤怒表情/肢体，悲伤台词配悲伤表情/肢体），情绪不一致立即退回；情绪曲线必须在分镜中体现（铺垫→蓄力→爆发→余韵），不能全程平。
 31. **动作连贯强制**：相邻子分镜/相邻镜头的动作必须连贯（上一镜尾帧动作状态→下一镜首帧承接），绝对禁止跳帧瞬移、绝对禁止动作断裂、绝对禁止站桩对波；动作必须强制执行写时间轴+运动学（起点/路径/终点/速度/身体配合/动作重叠区间），受击反馈必须强制执行写在命中之后；大肢体动作每个子分镜不超过1个。
 32. **强制索引协议**：进入每阶段前必须强制执行Read该阶段"必须加载的reference"列的全部文件，绝对禁止靠记忆补、绝对禁止跳步不索引；正文引用ch××某节时，必须强制执行！追读到对应规则原文并按原文执行，绝对禁止只看索引标题不看内容、绝对禁止凭记忆猜测规则内容；交叉引用的规则必须同步强制执行，绝对禁止只执行主规则忽略引用规则。
-33. **表情FACS AU编码强制**：所有含人物面部的分镜，表情描述必须基于FACS AU编码（见`references/ch18-facial-expression.md`），绝对禁止只写笼统情绪标签（如"她很开心"、"他生气了"）；真实微笑必须包含AU6（脸颊上提/眼轮匝肌收缩），没有AU6的微笑视为假笑；悲伤必须包含AU1（眉毛内侧上提/八字眉）；愤怒必须包含AU4+AU5+AU7眉眼组合；情绪变化必须标注AU渐变过程，禁止情绪跳变；口是心非必须标注嘴上AU与眼上AU的不一致；程度词必须对应AU强度等级（极微=A/微微=B/明显=C/狠狠=D/极端=E）。
-34. **群像控场三大铁律**：一镜内3人及以上的群像场景，必须强制执行（见`references/ch10a-camera-language.md` 10.11）：①重复定义空间——每个子分镜必须重复定义谁在画面左/右/前/后/坐/站，禁止只在开头定义一次；②身份映射——每个子分镜必须标注谁在说话/谁在听/谁的表情，禁止只写"众人"；③空间协议分层——世界拓扑/人物站位/镜头视角三层分开定义，禁止混在一起；群像场景禁止连续3镜同一人说话，高台词密度必须切反应镜头和环境/道具镜头。
+33. **表情FACS AU编码强制**：所有含人物面部的分镜，表情描述必须基于FACS AU编码（见`references/04-production/ch18-facial-expression.md`），绝对禁止只写笼统情绪标签（如"她很开心"、"他生气了"）；真实微笑必须包含AU6（脸颊上提/眼轮匝肌收缩），没有AU6的微笑视为假笑；悲伤必须包含AU1（眉毛内侧上提/八字眉）；愤怒必须包含AU4+AU5+AU7眉眼组合；情绪变化必须标注AU渐变过程，禁止情绪跳变；口是心非必须标注嘴上AU与眼上AU的不一致；程度词必须对应AU强度等级（极微=A/微微=B/明显=C/狠狠=D/极端=E）。
+34. **群像控场三大铁律**：一镜内3人及以上的群像场景，必须强制执行（见`references/04-production/ch10a-camera-language.md` 10.11）：①重复定义空间——每个子分镜必须重复定义谁在画面左/右/前/后/坐/站，禁止只在开头定义一次；②身份映射——每个子分镜必须标注谁在说话/谁在听/谁的表情，禁止只写"众人"；③空间协议分层——世界拓扑/人物站位/镜头视角三层分开定义，禁止混在一起；群像场景禁止连续3镜同一人说话，高台词密度必须切反应镜头和环境/道具镜头。
+
+## 3.5 索引绑定总表（主控面板核心，强制执行）
+
+> 本节是全 Skill 的索引调度中枢。**进入任一阶段前，必须先 Read 本节，确认当前阶段需要加载哪些文件、为什么加载、不加载的后果，然后才执行加载。** 禁止凭记忆猜测该加载什么文件，禁止漏加载，禁止加载无关文件浪费上下文。
+
+### 3.5.1 三级索引分类（强制执行）
+
+| 索引级别 | 含义 | 加载规则 | 释放规则 |
+|---|---|---|---|
+| **🔴 全程调度** | 每个阶段都必须在上下文里，是所有流程的基础 | 任务开始时（标准开场动作①）加载，**全程保留** | **绝对禁止释放**，直到任务结束 |
+| **🟡 阶段局部索引** | 只在特定阶段需要，其他阶段不需要 | 进入该阶段时加载 | 离开该阶段后可释放（但下一阶段也需要的则保留） |
+| **🟢 按需索引** | 是参考工具，不是必须执行的规则；用到才加载，不用不读 | 具体任务明确需要时才加载 | 用完即可释放 |
+
+**为什么分三级？**
+- 全程调度文件（ch01总控、ch03导演信条）定义了所有阶段的流程、闸门、一票否决、全局规则，任何阶段违反都会导致交付不合格，所以必须全程在上下文里。
+- 阶段局部索引文件只在特定阶段需要（如ch02理解只在阶段1-2需要），全程保留会浪费上下文，所以阶段性加载。
+- 按需索引文件（ch14素材库、ch15案例集）是参考工具，不是必须执行的规则，默认不加载，需要丰富描述或参考格式时才读。
+
+### 3.5.2 文件夹结构（7个功能模块）
+
+```
+references/
+├── 00-core/          # 🔴全程调度：核心规则（2个文件）
+├── 01-planning/      # 🟡阶段1-3：规划与理解（3个文件）
+├── 02-style/         # 🟡风格绑定阶段：风格与导演思维（2个文件）
+├── 03-dialogue/      # 🟡阶段4+8跨阶段：台词工程（2个文件）
+├── 04-production/    # 🟡阶段5-8：制作执行（8个文件）
+├── 05-quality/       # 🟡阶段9-10：质量校验（1个文件）
+└── 06-library/       # 🟢按需索引：素材库与参考（2个文件）
+```
+
+**为什么按功能模块分，不按阶段分？**
+- 有些文件跨多个阶段使用（如ch07a台词在阶段4和阶段8都需要，ch10a镜头在阶段5和阶段8都需要），按阶段分会导致同一个文件出现在多个阶段文件夹里，造成混乱。
+- 按功能模块分，每个文件有唯一的归属文件夹，跨阶段使用时通过索引绑定表说明在哪些阶段加载，清晰不混乱。
+- 每个功能模块文件夹内的文件是紧密关联的（如03-dialogue里的ch07a和ch07b必须一起加载），按功能分方便批量加载。
+
+### 3.5.3 各阶段索引绑定表（强制执行）
+
+> **使用方法：** 进入某阶段前，先 Read 本表中该阶段的"必须加载"列的全部文件，然后确认"为什么加载"和"不加载后果"，确认无误后才开始该阶段的工作。
+
+#### 阶段0：原文分级处理
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` | 定义了11阶段流程和一票否决，是所有阶段的总控 | 知道当前在阶段0、下一步是什么、违反规则的后果 | 不知道流程，跳步，违反一票否决 |
+| 🔴全程 | `00-core/ch03-director-creed.md` | 定义了输入分级处理规则（3.6节）和全局规则 | 知道怎么按字数分级、怎么处理不同长度的原文 | 分级错误，处理方式不当 |
+
+#### 阶段1：理解阶段
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度，所有阶段必须 | 同上 | 同上 |
+| 🟡阶段 | `01-planning/ch02-diagnosis.md` | 定义了三遍阅读法、内部理解表、理解闸门，是理解阶段的核心方法 | 知道怎么读故事、怎么找戏眼、怎么填内部理解表 | 不理解故事就拆镜头，没有戏眼，分镜质量差 |
+
+#### 阶段2：剧本定位与诊断
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `01-planning/ch02-diagnosis.md` | 定义了剧本定位六步法和诊断清单，是诊断阶段的核心方法 | 知道怎么诊断类型、节奏、高能分布、空间级别、情绪节拍 | 诊断遗漏，规划不合理 |
+
+#### 阶段3：蓝图阶段
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `01-planning/ch06-blueprint.md` | 定义了戏眼提取、戏剧性问题、高燃类型、节拍表、情绪曲线、镜头密度，是蓝图阶段的核心方法 | 知道怎么做蓝图七表、怎么规划镜头数量和节奏 | 没有蓝图，分镜乱拆，没有戏眼，节奏混乱 |
+| 🟡阶段 | `01-planning/ch04-scene-scale.md` | 定义了场景八级分级和空间规划，蓝图需要做场景规划 | 知道怎么分级场景、怎么规划空间关系 | 场景分级不合理，空间关系混乱 |
+| 🟡阶段 | `04-production/ch11-continuity.md` | 定义了叙事信息投放（双栏法），蓝图需要做信息投放表 | 知道怎么做信息投放、怎么制造悬念和落差 | 信息投放缺失，观众不揪心 |
+
+#### 风格绑定（蓝图后、资产前）
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `02-style/ch05-style-binding.md` | 定义了12种风格的人物外形、场景、手法关键词，是风格绑定的核心方法 | 知道怎么锁定风格锚、怎么匹配题材和风格 | 风格漂移，人物外形不统一 |
+| 🟡阶段 | `02-style/ch16-director-craft.md` | 定义了18种风格原型库（16.11节）和仙侠视觉体系（16.13节），是风格绑定的必要参考 | 知道有哪些风格原型可选、仙侠视觉的硬参数 | 风格选择盲目，缺少原型参考 |
+
+#### 阶段4：台词工程与预检
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `03-dialogue/ch07a-dialogue.md` | 定义了台词八道关、台词本质定义、原意三层修正、标点情绪映射，是台词工程的核心 | 知道怎么走八道关、怎么压缩台词、怎么保留原意和情绪 | 台词原意丢失、情绪丢失、压缩不合理 |
+| 🟡阶段 | `03-dialogue/ch07b-dialogue-timing.md` | 定义了台词时长预检公式、多句合计预检、时间轴对齐，是台词时长的核心 | 知道怎么计算台词时长、怎么判断放不放得下 | 台词放不下还输出、时长计算错误 |
+
+#### 阶段5：预锁定
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `01-planning/ch04-scene-scale.md` | 定义了轴线十项和场景预可视化，预锁定需要完成轴线十项 | 知道怎么锁定轴线、怎么预可视化场景 | 越轴，空间关系混乱 |
+| 🟡阶段 | `04-production/ch11-continuity.md` | 定义了连续性五表（空间台账/人物位置矩阵/道具流转图/台词流转表/运动方向表），预锁定需要完成五表 | 知道怎么做连续性五表、怎么保证跨段一致 | 跨段断裂，前后不一致 |
+| 🟡阶段 | `04-production/ch10a-camera-language.md` | 定义了声画关系决策树（10.10节），预锁定需要完成声画决策 | 知道怎么决策声画关系、怎么分配画面 | 声画关系错误，画面分配不合理 |
+
+#### 阶段6：规划审查与锁定
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `01-planning/ch06-blueprint.md` | 定义了镜头密度和镜头功能分工，审查需要核对镜头规划 | 知道怎么审查镜头数量和功能分工 | 镜头数量不合理，功能分工缺失 |
+| 🟡阶段 | `05-quality/ch13-quality-check.md` | 定义了逐项校验清单和内部评分，审查需要评分 | 知道怎么审查、怎么评分 | 审查遗漏，不合格的分镜进入制作 |
+
+#### 阶段7：资产锁定
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `04-production/ch08-asset-lock.md` | 定义了资产锁定工作流程、骨相锁定、防撞脸十项、资产卡模板，是资产阶段的核心 | 知道怎么做资产卡、怎么防撞脸、怎么锁定骨相 | 防撞脸失败、骨相不锁定、人物变脸 |
+| 🟡阶段 | `04-production/ch17-asset-management.md` | **长篇项目必须加载**。定义了资产编号体系、复用流程、大纲使用边界、逐章工作流 | 知道怎么复用已有资产、怎么管理资产库、怎么正确使用大纲 | 资产编号混乱、复用错误、大纲被误用为创作基础 |
+
+#### 阶段8：分镜生成（加载量最大的阶段）
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `03-dialogue/ch07a-dialogue.md` + `03-dialogue/ch07b-dialogue-timing.md` | 分镜需要台词规则（台词分类、声画关系、时长匹配） | 知道怎么写台词字段、怎么匹配时长、怎么处理声画关系 | 台词格式错误、时长不匹配、声画关系错误 |
+| 🟡阶段 | `04-production/ch12-storyboard-template.md` | 定义了分镜模板和标准格式，是分镜输出的直接模板 | 知道分镜的七字段结构、标准格式、首尾帧规则 | 分镜格式混乱、字段缺失、输出不规范 |
+| 🟡阶段 | `04-production/ch10a-camera-language.md` | 定义了景别、运镜、声画决策树、群像控场，分镜需要镜头语言 | 知道怎么选景别、怎么写运镜、怎么控场群像 | 景别不合理、运镜错误、群像空间混乱 |
+| 🟡阶段 | `04-production/ch09-visual-effects.md` | 定义了特效质量等级和各类特效大片感要求，分镜需要特效描述 | 知道怎么写特效可视化描述、怎么保证特效质量 | 特效廉价、描述不具体、等级不合理 |
+| 🟡阶段 | `04-production/ch18-facial-expression.md` | 定义了FACS AU表情编码，分镜需要精确表情描述 | 知道怎么用AU编码描述表情、怎么保证情绪准确 | 表情笼统、AI生成不自然、情绪表达不准确 |
+| 🟡阶段 | `04-production/ch11-continuity.md` | 定义了跨段衔接手法和自包含模板，分镜需要前后衔接 | 知道怎么保证跨段一致、怎么写自包含提示词 | 跨段断裂、前后不一致、提示词不自包含 |
+| 🟢按需 | `04-production/ch10b-action-engine.md` | **含打斗/法术/御剑/轻功/突破场景才加载**。定义了各类动作的具体规范 | 知道怎么写动作实体化描述、怎么保证打斗质量 | 动作抽象、站桩对波、打斗不真实 |
+| 🟢按需 | `06-library/ch14-material-library.md` | **需要丰富动作/特效/情绪/音效描述时才加载**。是零件库，不是必须规则 | 提取合适的零件丰富描述 | 描述可能不够丰富，但不会导致流程错误 |
+| 🟢按需 | `06-library/ch15-cases.md` | **需要参考完整分镜格式时才加载**。是案例集，不是必须规则 | 参考案例的格式和质量 | 格式可能不规范，但不会导致流程错误 |
+
+#### 阶段9：质量校验
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `05-quality/ch13-quality-check.md` | 定义了逐项校验清单、一票否决项、内部评分、交付格式，是质量校验的核心 | 知道怎么校验、怎么查一票否决、怎么评分 | 质量失控、一票否决项未检查、交付格式错误 |
+
+#### 阶段10：交付
+
+| 索引级别 | 文件 | 为什么加载 | 索引作用 | 不加载后果 |
+|---|---|---|---|---|
+| 🔴全程 | `00-core/ch01-control.md` + `00-core/ch03-director-creed.md` | 全程调度 | 同上 | 同上 |
+| 🟡阶段 | `05-quality/ch13-quality-check.md` | 定义了交付格式和精简规则，交付需要按格式输出 | 知道怎么交付、怎么精简输出、交付顺序是什么 | 交付格式错误、内容遗漏、顺序混乱 |
+
+### 3.5.4 索引执行强制规则（违反即返工）
+
+1. **进入每阶段前必须先 Read 3.5.3 该阶段的索引绑定表**，确认需要加载哪些文件，然后才执行加载。禁止凭记忆猜测该加载什么。
+2. **全程调度文件（00-core/）必须在标准开场动作①加载，全程保留，绝对禁止释放。** 即使上下文紧张，也只能释放阶段局部索引和按需索引，不能释放全程调度。
+3. **阶段局部索引文件必须在进入该阶段时加载，离开该阶段后可释放。** 但如果下一阶段也需要该文件（如ch07a台词在阶段4和阶段8都需要），则保留到不需要的阶段再释放。
+4. **按需索引文件（06-library/）默认不加载。** 只有具体任务明确需要时才加载，用完即可释放。禁止默认全部加载浪费上下文。
+5. **加载即对账：** 每完成一个阶段，必须内部核对"产物涉及的规则文件是否全部已读"。写了台词但没读03-dialogue/、写了打斗但没读04-production/ch10b、写了资产卡但没读04-production/ch08、写了分镜但没读04-production/ch12，强制判定违规并返工。
+6. **交叉引用强制追读：** 读到"按第X章X.X执行"时，必须按2.4节速查表定位文件，用Grep定位到该小节读完具体规则，然后才继续执行。禁止凭记忆复述引用章节的内容。
+7. **上下文过载保护：** 单次任务已加载reference超过8个文件时，新引用只Read与当前步骤直接相关的区段（用Grep定位后Read局部），不整章通读；但全程调度文件必须完整保留。
 
 ## 4. 总控工作流：11 个强制闸门阶段
 
-严格按阶段 0→10 顺序执行。**进入每阶段前，先强制执行 Read 下表"必须加载的 reference"列的全部文件（强制索引协议）。** 每阶段的强制动作、强制检查、不通过处理见 `references/ch01-control.md`。
+严格按阶段 0→10 顺序执行。**进入每阶段前，先强制执行 Read 下表"必须加载的 reference"列的全部文件（强制索引协议）。** 每阶段的强制动作、强制检查、不通过处理见 `references/00-core/ch01-control.md`。
 
 | 阶段 | 名称 | 闸门（全过才放行） | 必须加载的 reference |
 |---|---|---|---|
-| 0 | 原文分级处理 | 已按字数分级（≤3000 全量；3000-10000 章节级情绪提炼；>10000 先出幕结构总览并提示分段），明确本次处理范围 | `ch03-director-creed.md`（原文分级 S/A/B/C 与处理流程） |
-| 1 | 理解阶段 | 戏眼、戏剧性问题、高燃类型、情绪曲线、节拍表、多拍少拍判断 6 项明确；内部理解表+叙事信息投放表已在框外输出 | `ch02-diagnosis.md`（三遍阅读法、内部理解表） |
-| 2 | 剧本定位与诊断 | 诊断清单逐项通过：类型、节奏、高能分布、空间级别、情绪节拍、镜头规划、台词规划 | `ch02-diagnosis.md` |
-| 3 | 蓝图阶段 | 七表齐全（节拍表、情绪曲线、信息投放表、镜头密度表、人物关系变化表、场景状态变化表、道具流转表）且已在框外输出；镜头 8-18、总时长 81-198 秒、非人物镜头 30%-50%、连续人物镜头 ≤4 | `ch06-blueprint.md`；台账见 `ch11-continuity.md` |
-| — | 风格绑定（蓝图后、资产前） | 风格锚完整描述版锁定、题材-风格匹配、渲染/色调/材质参数锁定，全片不漂移；选定主导风格原型 | `ch05-style-binding.md`、`ch16-director-craft.md`（16.11风格原型库、16.13仙侠视觉体系） |
-| 4 | 台词工程与预检 | 台词八道关全过；每句台词时长预检通过；台词归属按七级顺序处理；台词锚整句起止、子分镜分段台词、双时间轴分离 | `ch07a-dialogue.md`、`ch07b-dialogue-timing.md`；计算用 `scripts/dialogue_time_check.py` |
-| 5 | 预锁定 | 场景预可视化、轴线十项、跨段连续性五表（空间台账/人物位置矩阵/道具流转图/台词流转表/运动方向表）、每镜台词预检、声画关系决策树、台词归属优先级全部完成 | `ch04-scene-scale.md`、`ch11-continuity.md`、`ch10a-camera-language.md`（声画决策树 10.10） |
-| 6 | 规划审查与锁定 | 镜头数量/时长/台词/节奏/资产/轴线/连续性/画面八项审查通过；每镜内部评分 ≥90；空段检查通过 | `ch06-blueprint.md`、`ch13-quality-check.md` |
-| 7 | 资产锁定 | **先问用户是否已有资产卡**；角色/场景/道具/生物卡完整独立；防撞脸十项、骨相七项置首、灵光色锁定、三视图无脸、字幕标注与画外音来源预写；长篇项目读取资产库复用已有资产，只制作新增 | `ch08-asset-lock.md`、`ch17-asset-management.md` |
-| 8 | 分镜生成 | 每镜走"每镜强制流程卡"（见下）；台词预检→归属→声画决策树→子分镜→填负载→空段检查→跨镜交接→评分→输出 | 模板 `ch12-storyboard-template.md`；画质特效 `ch09-visual-effects.md`；镜头与动作 `ch10a`/`ch10b`；零件 `ch14-material-library.md`；表情编码 `ch18-facial-expression.md`；范例 `ch15-cases.md` |
-| 9 | 质量校验 | 逐项校验清单 + 一票否决全部通过；帧级封面、动作流畅、特效、台词、轴线、连续性、叙事投放逐项核验 | `ch13-quality-check.md` |
-| 10 | 交付 | 交付纯净；输出前询问用户确认；每批最多 3 镜，输出完停止，等用户说"继续" | `ch13-quality-check.md`（交付格式与精简版规则） |
+| 0 | 原文分级处理 | 已按字数分级（≤3000 全量；3000-10000 章节级情绪提炼；>10000 先出幕结构总览并提示分段），明确本次处理范围 | `00-core/ch03-director-creed.md`（原文分级 S/A/B/C 与处理流程） |
+| 1 | 理解阶段 | 戏眼、戏剧性问题、高燃类型、情绪曲线、节拍表、多拍少拍判断 6 项明确；内部理解表+叙事信息投放表已在框外输出 | `01-planning/ch02-diagnosis.md`（三遍阅读法、内部理解表） |
+| 2 | 剧本定位与诊断 | 诊断清单逐项通过：类型、节奏、高能分布、空间级别、情绪节拍、镜头规划、台词规划 | `01-planning/ch02-diagnosis.md` |
+| 3 | 蓝图阶段 | 七表齐全（节拍表、情绪曲线、信息投放表、镜头密度表、人物关系变化表、场景状态变化表、道具流转表）且已在框外输出；镜头 8-18、总时长 81-198 秒、非人物镜头 30%-50%、连续人物镜头 ≤4 | `01-planning/ch06-blueprint.md`；台账见 `04-production/ch11-continuity.md` |
+| — | 风格绑定（蓝图后、资产前） | 风格锚完整描述版锁定、题材-风格匹配、渲染/色调/材质参数锁定，全片不漂移；选定主导风格原型 | `02-style/ch05-style-binding.md`、`02-style/ch16-director-craft.md`（16.11风格原型库、16.13仙侠视觉体系） |
+| 4 | 台词工程与预检 | 台词八道关全过；每句台词时长预检通过；台词归属按七级顺序处理；台词锚整句起止、子分镜分段台词、双时间轴分离 | `03-dialogue/ch07a-dialogue.md`、`03-dialogue/ch07b-dialogue-timing.md`；计算用 `scripts/dialogue_time_check.py` |
+| 5 | 预锁定 | 场景预可视化、轴线十项、跨段连续性五表（空间台账/人物位置矩阵/道具流转图/台词流转表/运动方向表）、每镜台词预检、声画关系决策树、台词归属优先级全部完成 | `01-planning/ch04-scene-scale.md`、`04-production/ch11-continuity.md`、`04-production/ch10a-camera-language.md`（声画决策树 10.10） |
+| 6 | 规划审查与锁定 | 镜头数量/时长/台词/节奏/资产/轴线/连续性/画面八项审查通过；每镜内部评分 ≥90；空段检查通过 | `01-planning/ch06-blueprint.md`、`05-quality/ch13-quality-check.md` |
+| 7 | 资产锁定 | **先问用户是否已有资产卡**；角色/场景/道具/生物卡完整独立；防撞脸十项、骨相七项置首、灵光色锁定、三视图无脸、字幕标注与画外音来源预写；长篇项目读取资产库复用已有资产，只制作新增 | `04-production/ch08-asset-lock.md`、`04-production/ch17-asset-management.md` |
+| 8 | 分镜生成 | 每镜走"每镜强制流程卡"（见下）；台词预检→归属→声画决策树→子分镜→填负载→空段检查→跨镜交接→评分→输出 | 模板 `04-production/ch12-storyboard-template.md`；画质特效 `04-production/ch09-visual-effects.md`；镜头与动作 `ch10a`/`ch10b`；零件 `06-library/ch14-material-library.md`；表情编码 `04-production/ch18-facial-expression.md`；范例 `06-library/ch15-cases.md` |
+| 9 | 质量校验 | 逐项校验清单 + 一票否决全部通过；帧级封面、动作流畅、特效、台词、轴线、连续性、叙事投放逐项核验 | `05-quality/ch13-quality-check.md` |
+| 10 | 交付 | 交付纯净；输出前询问用户确认；每批最多 3 镜，输出完停止，等用户说"继续" | `05-quality/ch13-quality-check.md`（交付格式与精简版规则） |
 
 规划阶段（阶段 1-6）可与用户反复迭代，**规划锁定后才进入分镜**。
 
@@ -217,28 +366,28 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 
 | 你要做的事 | 读取文件 |
 |---|---|
-| 掌握总控、补丁机制、11 阶段定义、一票否决、评分、交付纯净 | `references/ch01-control.md` |
-| 三遍阅读法、内部理解表、戏眼/戏剧性问题/高燃类型、剧本诊断清单、题材分类 | `references/ch02-diagnosis.md` |
-| 导演信条、质量底线、单镜头与总时长强制规则、输出节奏、精简输出、输入分级、全局字幕/音频/风格/人物锚定 | `references/ch03-director-creed.md` |
-| 场景八级分级、空间尺度层级、空间关系判定、机位、轴线十项、场面调度、群像、越轴过渡、大场景拆分 | `references/ch04-scene-scale.md` |
-| 风格锚、风格库、题材-风格匹配、渲染参数、色调/材质/胶片颗粒 | `references/ch05-style-binding.md` |
-| 节拍表、情绪曲线、高燃设计、蓝图七表、镜头密度、对话回合结构（ABAB/ABBA/AABB） | `references/ch06-blueprint.md` |
-| 台词八道关、四分类、五种镜头处理方式、旁白/内心独白、吞台词、压缩改写、多人嘴唇切换、嘴型排布、字数上限 | `references/ch07a-dialogue.md` |
-| 台词时长预检公式、双时间轴对齐、跨子分镜/跨镜头规则、台词表演（语速/停顿/重音/口型/话毕静默）、分配观赏性 | `references/ch07b-dialogue-timing.md` |
-| 资产锁定工作流程、骨相锁定、防撞脸十项、仙侠附加六项、资产锁定卡模板、多角色同框视觉主权、场景/道具/生物资产锁定、资产编号分配、资产回读确认 | `references/ch08-asset-lock.md` |
-| 光源动机、纵深主层、五层色彩思维、题材色彩桶、质感锚点、特效质量等级体系、各类特效大片感要求、打击感专项、反廉价化、仙侠光影硬参数、渲染技术清单 | `references/ch09-visual-effects.md` |
-| 景别完整层级表、运镜术语完全手册、拍摄角度、构图、焦距景深、镜头几何锁、重技法频率、运镜三维度、景别运镜按场景与功能、声画关系决策树 | `references/ch10a-camera-language.md` |
-| 动作引擎总纲、御剑/轻功/剑法/掌法/拳法/法术释放/战斗对打、打斗场景按招式回合拆分、动作引擎具体规范、打斗物理反馈词库 | `references/ch10b-action-engine.md` |
-| 零记忆与三锚点、连续性五表、跨度控制、影视级衔接手法库、每段自包含模板、叙事信息投放（双栏法/谜题悬念/角色入场/跨段位置过渡） | `references/ch11-continuity.md` |
-| 分镜前置闸门、首尾帧、五字段固定结构、运镜 AI 可视化示例、分镜 AI 提示词标准格式与完整版模板、完整分镜示例、输出节奏与精简规则 | `references/ch12-storyboard-template.md` |
-| 逐项校验清单、一票否决项、内部评分、交付格式、最终流程、最终自检清单、交付确认流程 | `references/ch13-quality-check.md` |
-| 情绪/肢体/搏斗/兵器/特效/运镜/音效/风格/场景细节零件库、AI 友好度三色标、接触音效写法、仙侠特效补充库 | `references/ch14-material-library.md` |
-| 仙侠练剑、都市咖啡馆借笔、仙侠剑客对决、农村年代戏、悬疑犯罪戏完整范例 | `references/ch15-cases.md` |
-| 导演思维层（故事生命/叙事信息控制/情绪注意力曲线/声音设计/剪辑思维/类型节奏公式/意象设计/镜头纪律/表演节奏/18种风格原型/审查红线/仙侠动漫视觉体系） | `references/ch16-director-craft.md` |
-| 资产管理与复用（编号体系/角色核心描述/复用流程/版本管理/大纲使用边界/逐章工作流） | `references/ch17-asset-management.md` |
-| 面部表情编码系统FACS AU（完整AU编码表/强度分级A-E/7大情绪AU组合映射/真实vs掩饰对比/情绪渐变/眼泪形成过程/全局人物刻画规则） | `references/ch18-facial-expression.md` |
+| 掌握总控、补丁机制、11 阶段定义、一票否决、评分、交付纯净 | `references/00-core/ch01-control.md` |
+| 三遍阅读法、内部理解表、戏眼/戏剧性问题/高燃类型、剧本诊断清单、题材分类 | `references/01-planning/ch02-diagnosis.md` |
+| 导演信条、质量底线、单镜头与总时长强制规则、输出节奏、精简输出、输入分级、全局字幕/音频/风格/人物锚定 | `references/00-core/ch03-director-creed.md` |
+| 场景八级分级、空间尺度层级、空间关系判定、机位、轴线十项、场面调度、群像、越轴过渡、大场景拆分 | `references/01-planning/ch04-scene-scale.md` |
+| 风格锚、风格库、题材-风格匹配、渲染参数、色调/材质/胶片颗粒 | `references/02-style/ch05-style-binding.md` |
+| 节拍表、情绪曲线、高燃设计、蓝图七表、镜头密度、对话回合结构（ABAB/ABBA/AABB） | `references/01-planning/ch06-blueprint.md` |
+| 台词八道关、四分类、五种镜头处理方式、旁白/内心独白、吞台词、压缩改写、多人嘴唇切换、嘴型排布、字数上限 | `references/03-dialogue/ch07a-dialogue.md` |
+| 台词时长预检公式、双时间轴对齐、跨子分镜/跨镜头规则、台词表演（语速/停顿/重音/口型/话毕静默）、分配观赏性 | `references/03-dialogue/ch07b-dialogue-timing.md` |
+| 资产锁定工作流程、骨相锁定、防撞脸十项、仙侠附加六项、资产锁定卡模板、多角色同框视觉主权、场景/道具/生物资产锁定、资产编号分配、资产回读确认 | `references/04-production/ch08-asset-lock.md` |
+| 光源动机、纵深主层、五层色彩思维、题材色彩桶、质感锚点、特效质量等级体系、各类特效大片感要求、打击感专项、反廉价化、仙侠光影硬参数、渲染技术清单 | `references/04-production/ch09-visual-effects.md` |
+| 景别完整层级表、运镜术语完全手册、拍摄角度、构图、焦距景深、镜头几何锁、重技法频率、运镜三维度、景别运镜按场景与功能、声画关系决策树 | `references/04-production/ch10a-camera-language.md` |
+| 动作引擎总纲、御剑/轻功/剑法/掌法/拳法/法术释放/战斗对打、打斗场景按招式回合拆分、动作引擎具体规范、打斗物理反馈词库 | `references/04-production/ch10b-action-engine.md` |
+| 零记忆与三锚点、连续性五表、跨度控制、影视级衔接手法库、每段自包含模板、叙事信息投放（双栏法/谜题悬念/角色入场/跨段位置过渡） | `references/04-production/ch11-continuity.md` |
+| 分镜前置闸门、首尾帧、五字段固定结构、运镜 AI 可视化示例、分镜 AI 提示词标准格式与完整版模板、完整分镜示例、输出节奏与精简规则 | `references/04-production/ch12-storyboard-template.md` |
+| 逐项校验清单、一票否决项、内部评分、交付格式、最终流程、最终自检清单、交付确认流程 | `references/05-quality/ch13-quality-check.md` |
+| 情绪/肢体/搏斗/兵器/特效/运镜/音效/风格/场景细节零件库、AI 友好度三色标、接触音效写法、仙侠特效补充库 | `references/06-library/ch14-material-library.md` |
+| 仙侠练剑、都市咖啡馆借笔、仙侠剑客对决、农村年代戏、悬疑犯罪戏完整范例 | `references/06-library/ch15-cases.md` |
+| 导演思维层（故事生命/叙事信息控制/情绪注意力曲线/声音设计/剪辑思维/类型节奏公式/意象设计/镜头纪律/表演节奏/18种风格原型/审查红线/仙侠动漫视觉体系） | `references/02-style/ch16-director-craft.md` |
+| 资产管理与复用（编号体系/角色核心描述/复用流程/版本管理/大纲使用边界/逐章工作流） | `references/04-production/ch17-asset-management.md` |
+| 面部表情编码系统FACS AU（完整AU编码表/强度分级A-E/7大情绪AU组合映射/真实vs掩饰对比/情绪渐变/眼泪形成过程/全局人物刻画规则） | `references/04-production/ch18-facial-expression.md` |
 
-> 大文件检索提示：`ch07a`、`ch09`、`ch06`、`ch08`、`ch10a`、`ch13`、`ch15` 较长，先用 Grep 按小节号（如 `7\.1`、`9\.`）或关键词（"红线时长""防撞脸""负面提示词"）定位，再 Read 对应区段；每个 reference 开头都有"本章节录"。
+> 大文件检索提示：`03-dialogue/ch07a`、`04-production/ch09`、`01-planning/ch06`、`04-production/ch08`、`04-production/ch10a`、`05-quality/ch13`、`06-library/ch15` 较长，先用 Grep 按小节号（如 `7\.1`、`9\.`）或关键词（"红线时长""防撞脸""负面提示词"）定位，再 Read 对应区段；每个 reference 开头都有"本章节录"。
 
 ## 7. 脚本：台词时长预检
 
@@ -264,9 +413,9 @@ python3 scripts/dialogue_time_check.py --shot 12 --line "风起青萍" --rhythm 
 1. 完成全部模块后，**先询问用户是否输出最终交付包**，确认后再逐条输出。
 2. 输出顺序：全局技术规格 → 全局色调方案 → 全部角色资产卡 → 全部场景资产卡 → 全部道具资产卡 → 全部生物资产卡 → 分镜（每批 ≤3 镜，等"继续"）。
 3. 每张卡、每镜分镜完整独立，所有字段逐项写实，短锚也是自包含完整描述；用户复制任意单元即可直接粘贴使用。
-4. 用户说"精简输出/输出提示词精简"时，按 `ch13-quality-check.md` 的精简规则处理：只删说明性、重复性、过渡性文字，所有可执行画面信息、资产锚、台词字段、时间戳、字幕/画外音标注、预检结果一个不能少；精简版与完整版必须可被生成工具等价执行。
+4. 用户说"精简输出/输出提示词精简"时，按 `05-quality/ch13-quality-check.md` 的精简规则处理：只删说明性、重复性、过渡性文字，所有可执行画面信息、资产锚、台词字段、时间戳、字幕/画外音标注、预检结果一个不能少；精简版与完整版必须可被生成工具等价执行。
 5. 交付物中禁止出现：时长映射声明、连续性自检、衔接姿态备注、蓝图引用、素材库编号、章节引用、评分、修正记录。
 
 ## 9. 规则补丁机制
 
-用户在使用中发现的重复性问题，按 `ch01-control.md` 1.3 的补丁格式（RP-YYYYMMDD-XX：触发场景/错误现象/根因/整改规则/适用范围/优先级/冲突处理/验证方式/插入位置/可复制条款）沉淀；每条补丁只解决一个问题，生效补丁融入对应章节并在 1.3.7 登记。用户未要求时不主动输出补丁包。
+用户在使用中发现的重复性问题，按 `00-core/ch01-control.md` 1.3 的补丁格式（RP-YYYYMMDD-XX：触发场景/错误现象/根因/整改规则/适用范围/优先级/冲突处理/验证方式/插入位置/可复制条款）沉淀；每条补丁只解决一个问题，生效补丁融入对应章节并在 1.3.7 登记。用户未要求时不主动输出补丁包。
