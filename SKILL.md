@@ -52,7 +52,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
    ```bash
    SKILL_DIR="$(cd "$(dirname "$0")" 2>/dev/null || pwd)"
    BASE="https://raw.githubusercontent.com/xiaosheng-01/manju-pipeline-v3/master"
-   for f in SKILL.md references/ch01-control.md references/ch02-diagnosis.md references/ch03-director-creed.md references/ch04-scene-scale.md references/ch05-style-binding.md references/ch06-blueprint.md references/ch07a-dialogue.md references/ch07b-dialogue-timing.md references/ch08-asset-lock.md references/ch09-visual-effects.md references/ch10a-camera-language.md references/ch10b-action-engine.md references/ch11-continuity.md references/ch12-storyboard-template.md references/ch13-quality-check.md references/ch14-material-library.md references/ch15-cases.md references/ch16-director-craft.md references/ch17-asset-management.md scripts/dialogue_time_check.py assets/asset-registry-template.md; do
+   for f in SKILL.md references/ch01-control.md references/ch02-diagnosis.md references/ch03-director-creed.md references/ch04-scene-scale.md references/ch05-style-binding.md references/ch06-blueprint.md references/ch07a-dialogue.md references/ch07b-dialogue-timing.md references/ch08-asset-lock.md references/ch09-visual-effects.md references/ch10a-camera-language.md references/ch10b-action-engine.md references/ch11-continuity.md references/ch12-storyboard-template.md references/ch13-quality-check.md references/ch14-material-library.md references/ch15-cases.md references/ch16-director-craft.md references/ch17-asset-management.md references/ch18-facial-expression.md scripts/dialogue_time_check.py assets/asset-registry-template.md; do
      [ -f "$SKILL_DIR/$f" ] || { mkdir -p "$SKILL_DIR/$(dirname "$f")"; curl -sL "$BASE/$f" -o "$SKILL_DIR/$f"; echo "已下载: $f"; }
    done
    chmod +x "$SKILL_DIR/scripts/dialogue_time_check.py" 2>/dev/null
@@ -103,6 +103,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 | 第15章 案例集 | `ch15-cases.md` | 全部 |
 | 第16章 导演思维层 | `ch16-director-craft.md` | 全部 |
 | 第17章 资产管理与复用 | `ch17-asset-management.md` | 全部 |
+| 第18章 面部表情编码系统（FACS AU） | `ch18-facial-expression.md` | 全部 |
 
 ## 3. 最高准则 + P0铁律
 
@@ -165,6 +166,8 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 30. **情绪内容画面表达强制**：每镜画面描述必须体现角色情绪（表情/肢体/微动作/环境烘托），不能只写动作不写情绪；台词的情绪类型必须与画面的情绪表达一致（愤怒台词配愤怒表情/肢体，悲伤台词配悲伤表情/肢体），情绪不一致立即退回；情绪曲线必须在分镜中体现（铺垫→蓄力→爆发→余韵），不能全程平。
 31. **动作连贯强制**：相邻子分镜/相邻镜头的动作必须连贯（上一镜尾帧动作状态→下一镜首帧承接），绝对禁止跳帧瞬移、绝对禁止动作断裂、绝对禁止站桩对波；动作必须强制执行写时间轴+运动学（起点/路径/终点/速度/身体配合/动作重叠区间），受击反馈必须强制执行写在命中之后；大肢体动作每个子分镜不超过1个。
 32. **强制索引协议**：进入每阶段前必须强制执行Read该阶段"必须加载的reference"列的全部文件，绝对禁止靠记忆补、绝对禁止跳步不索引；正文引用ch××某节时，必须强制执行！追读到对应规则原文并按原文执行，绝对禁止只看索引标题不看内容、绝对禁止凭记忆猜测规则内容；交叉引用的规则必须同步强制执行，绝对禁止只执行主规则忽略引用规则。
+33. **表情FACS AU编码强制**：所有含人物面部的分镜，表情描述必须基于FACS AU编码（见`references/ch18-facial-expression.md`），绝对禁止只写笼统情绪标签（如"她很开心"、"他生气了"）；真实微笑必须包含AU6（脸颊上提/眼轮匝肌收缩），没有AU6的微笑视为假笑；悲伤必须包含AU1（眉毛内侧上提/八字眉）；愤怒必须包含AU4+AU5+AU7眉眼组合；情绪变化必须标注AU渐变过程，禁止情绪跳变；口是心非必须标注嘴上AU与眼上AU的不一致；程度词必须对应AU强度等级（极微=A/微微=B/明显=C/狠狠=D/极端=E）。
+34. **群像控场三大铁律**：一镜内3人及以上的群像场景，必须强制执行（见`references/ch10a-camera-language.md` 10.11）：①重复定义空间——每个子分镜必须重复定义谁在画面左/右/前/后/坐/站，禁止只在开头定义一次；②身份映射——每个子分镜必须标注谁在说话/谁在听/谁的表情，禁止只写"众人"；③空间协议分层——世界拓扑/人物站位/镜头视角三层分开定义，禁止混在一起；群像场景禁止连续3镜同一人说话，高台词密度必须切反应镜头和环境/道具镜头。
 
 ## 4. 总控工作流：11 个强制闸门阶段
 
@@ -181,7 +184,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 | 5 | 预锁定 | 场景预可视化、轴线十项、跨段连续性五表（空间台账/人物位置矩阵/道具流转图/台词流转表/运动方向表）、每镜台词预检、声画关系决策树、台词归属优先级全部完成 | `ch04-scene-scale.md`、`ch11-continuity.md`、`ch10a-camera-language.md`（声画决策树 10.10） |
 | 6 | 规划审查与锁定 | 镜头数量/时长/台词/节奏/资产/轴线/连续性/画面八项审查通过；每镜内部评分 ≥90；空段检查通过 | `ch06-blueprint.md`、`ch13-quality-check.md` |
 | 7 | 资产锁定 | **先问用户是否已有资产卡**；角色/场景/道具/生物卡完整独立；防撞脸十项、骨相七项置首、灵光色锁定、三视图无脸、字幕标注与画外音来源预写；长篇项目读取资产库复用已有资产，只制作新增 | `ch08-asset-lock.md`、`ch17-asset-management.md` |
-| 8 | 分镜生成 | 每镜走"每镜强制流程卡"（见下）；台词预检→归属→声画决策树→子分镜→填负载→空段检查→跨镜交接→评分→输出 | 模板 `ch12-storyboard-template.md`；画质特效 `ch09-visual-effects.md`；镜头与动作 `ch10a`/`ch10b`；零件 `ch14-material-library.md`；范例 `ch15-cases.md` |
+| 8 | 分镜生成 | 每镜走"每镜强制流程卡"（见下）；台词预检→归属→声画决策树→子分镜→填负载→空段检查→跨镜交接→评分→输出 | 模板 `ch12-storyboard-template.md`；画质特效 `ch09-visual-effects.md`；镜头与动作 `ch10a`/`ch10b`；零件 `ch14-material-library.md`；表情编码 `ch18-facial-expression.md`；范例 `ch15-cases.md` |
 | 9 | 质量校验 | 逐项校验清单 + 一票否决全部通过；帧级封面、动作流畅、特效、台词、轴线、连续性、叙事投放逐项核验 | `ch13-quality-check.md` |
 | 10 | 交付 | 交付纯净；输出前询问用户确认；每批最多 3 镜，输出完停止，等用户说"继续" | `ch13-quality-check.md`（交付格式与精简版规则） |
 
@@ -233,6 +236,7 @@ description: "漫剧/AI动态漫/国漫短剧全流程制作 Skill 5.0：把小�
 | 仙侠练剑、都市咖啡馆借笔、仙侠剑客对决、农村年代戏、悬疑犯罪戏完整范例 | `references/ch15-cases.md` |
 | 导演思维层（故事生命/叙事信息控制/情绪注意力曲线/声音设计/剪辑思维/类型节奏公式/意象设计/镜头纪律/表演节奏/18种风格原型/审查红线/仙侠动漫视觉体系） | `references/ch16-director-craft.md` |
 | 资产管理与复用（编号体系/角色核心描述/复用流程/版本管理/大纲使用边界/逐章工作流） | `references/ch17-asset-management.md` |
+| 面部表情编码系统FACS AU（完整AU编码表/强度分级A-E/7大情绪AU组合映射/真实vs掩饰对比/情绪渐变/眼泪形成过程/全局人物刻画规则） | `references/ch18-facial-expression.md` |
 
 > 大文件检索提示：`ch07a`、`ch09`、`ch06`、`ch08`、`ch10a`、`ch13`、`ch15` 较长，先用 Grep 按小节号（如 `7\.1`、`9\.`）或关键词（"红线时长""防撞脸""负面提示词"）定位，再 Read 对应区段；每个 reference 开头都有"本章节录"。
 
