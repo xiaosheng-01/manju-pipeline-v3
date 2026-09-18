@@ -292,6 +292,7 @@ references/
 | 🟡阶段 | `04-production/ch10a-camera-language.md` | 定义了景别、运镜、声画决策树、群像控场，分镜需要镜头语言 | 知道怎么选景别、怎么写运镜、怎么控场群像 | 景别不合理、运镜错误、群像空间混乱 |
 | 🟡阶段 | `04-production/ch09-visual-effects.md` | 定义了特效质量等级和各类特效大片感要求，分镜需要特效描述 | 知道怎么写特效可视化描述、怎么保证特效质量 | 特效廉价、描述不具体、等级不合理 |
 | 🟡阶段 | `04-production/ch18-facial-expression.md` | 定义了FACS AU表情编码，分镜需要精确表情描述 | 知道怎么用AU编码描述表情、怎么保证情绪准确 | 表情笼统、AI生成不自然、情绪表达不准确 |
+| 🟡阶段 | `04-production/ch19-storyboard-cases.md` | **分镜阶段必须索引**。定义了正确vs错误分镜案例库，覆盖8类场景（基础规范/台词/运镜/群像/反应镜头/情绪渐变/长台词跨子分镜/第一个镜头） | 对照正确vs错误示例检查每个子分镜的画面字段写法，防止常见错误 | 分镜画面字段写法不规范，AI生成质量差 |
 | 🟡阶段 | `02-style/ch16-director-craft.md` | **阶段4-7释放后，阶段8重新加载**。重点参考16.9镜头纪律（硬规则）、16.10表演与节奏 | 用镜头纪律检查分镜合规性、用表演与节奏指导表演描述 | 分镜违反镜头纪律、表演描述不专业、节奏不对 |
 | 🟡阶段 | `04-production/ch11-continuity.md` | 定义了跨段衔接手法和自包含模板，分镜需要前后衔接 | 知道怎么保证跨段一致、怎么写自包含提示词 | 跨段断裂、前后不一致、提示词不自包含 |
 | 🟢按需 | `04-production/ch10b-action-engine.md` | **含打斗/法术/御剑/轻功/突破场景才加载**。定义了各类动作的具体规范 | 知道怎么写动作实体化描述、怎么保证打斗质量 | 动作抽象、站桩对波、打斗不真实 |
@@ -345,7 +346,7 @@ references/
 | 5 | 预锁定 | 场景预可视化、轴线十项、跨段连续性五表（空间台账/人物位置矩阵/道具流转图/台词流转表/运动方向表）、每镜台词预检、声画关系决策树、台词归属优先级全部完成 | `01-planning/ch04-scene-scale.md`、`04-production/ch11-continuity.md`、`04-production/ch10a-camera-language.md`（声画决策树 10.10） |
 | 6 | 规划审查与锁定 | 镜头数量/时长/台词/节奏/资产/轴线/连续性/画面八项审查通过；每镜内部评分 ≥90；空段检查通过 | `01-planning/ch06-blueprint.md`、`05-quality/ch13-quality-check.md` |
 | 7 | 资产锁定 | **先问用户是否已有资产卡**；角色/场景/道具/生物卡完整独立；防撞脸十项、骨相七项置首、灵光色锁定、三视图无脸、字幕标注与画外音来源预写；长篇项目读取资产库复用已有资产，只制作新增 | `04-production/ch08-asset-lock.md`、`04-production/ch17-asset-management.md` |
-| 8 | 分镜生成 | 每镜走"每镜强制流程卡"（见下）；台词预检→归属→声画决策树→子分镜→填负载→空段检查→跨镜交接→评分→输出 | 模板 `04-production/ch12-storyboard-template.md`；画质特效 `04-production/ch09-visual-effects.md`；镜头与动作 `ch10a`/`ch10b`；零件 `06-library/ch14-material-library.md`；表情编码 `04-production/ch18-facial-expression.md`；镜头纪律 `02-style/ch16-director-craft.md`（16.9镜头纪律、16.10表演节奏）；范例 `06-library/ch15-cases.md` |
+| 8 | 分镜生成 | 每镜走"每镜强制流程卡"（见下）；台词预检→归属→声画决策树→子分镜→填负载→空段检查→跨镜交接→评分→输出 | 模板 `04-production/ch12-storyboard-template.md`；画质特效 `04-production/ch09-visual-effects.md`；镜头与动作 `ch10a`/`ch10b`；零件 `06-library/ch14-material-library.md`；表情编码 `04-production/ch18-facial-expression.md`；案例库 `04-production/ch19-storyboard-cases.md`（必须索引）；镜头纪律 `02-style/ch16-director-craft.md`（16.9镜头纪律、16.10表演节奏）；范例 `06-library/ch15-cases.md` |
 | 9 | 质量校验 | 逐项校验清单 + 一票否决全部通过；帧级封面、动作流畅、特效、台词、轴线、连续性、叙事投放逐项核验 | `05-quality/ch13-quality-check.md` |
 | 10 | 交付 | 交付纯净；输出前询问用户确认；每批最多 3 镜，输出完停止，等用户说"继续" | `05-quality/ch13-quality-check.md`（交付格式与精简版规则） |
 
